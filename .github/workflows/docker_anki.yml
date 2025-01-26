@@ -54,10 +54,13 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: .
+          push: true
           file: docs/syncserver/Dockerfile
           no-cache: true
           build-args: |
             ANKI_VERSION=${{ needs.extract-version.outputs.VERSION }}
-          tags: ${{ env.REGISTRY }}/kolbyml/docker_images-anki-syncserver:latest
+          tags: |
+            ${{ env.REGISTRY }}/kolbyml/docker_images-anki-syncserver:latest
+            ${{ env.REGISTRY }}/kolbyml/docker_images-anki-syncserver:${{ needs.extract-version.outputs.VERSION }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
