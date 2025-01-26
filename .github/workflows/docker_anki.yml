@@ -59,6 +59,5 @@ jobs:
           build-args:
             - ANKI_VERSION=${{ needs.extract-version.outputs.VERSION }}
           tags: ${{ env.REGISTRY }}/${{ github.repository }}-anki-syncserver:latest,${{ env.REGISTRY }}/${{ github.repository }}-anki-syncserver:${{ needs.extract-version.outputs.VERSION }}
-          labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
