@@ -1,0 +1,14 @@
+name: trigger-anki
+
+on:
+  schedule:
+    - cron:  '0 0 * * *'
+
+  # Allow manual triggering
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - run: ./trigger_anki.sh
