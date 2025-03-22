@@ -16,5 +16,5 @@ jobs:
         run: ls
 
       - name: Run Anki trigger script
-        run: ./trigger_anki.sh
+        run: ./.github/workflows/trigger_anki.sh
 
