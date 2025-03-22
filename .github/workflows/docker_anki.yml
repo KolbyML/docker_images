@@ -56,7 +56,7 @@ jobs:
         with:
           context: docs/syncserver
           push: true
-          file: Dockerfile
+          file: docs/syncserver/Dockerfile
           no-cache: true
           build-args: |
             ANKI_VERSION=${{ needs.extract-version.outputs.VERSION }}
