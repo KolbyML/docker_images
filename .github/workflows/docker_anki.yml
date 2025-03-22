@@ -54,9 +54,9 @@ jobs:
         id: build-and-push
         uses: docker/build-push-action@v6
         with:
-          context: .
+          context: docs/syncserver
           push: true
-          file: docs/syncserver/Dockerfile
+          file: Dockerfile
           no-cache: true
           build-args: |
             ANKI_VERSION=${{ needs.extract-version.outputs.VERSION }}
