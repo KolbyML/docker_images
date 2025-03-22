@@ -11,4 +11,5 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
+      - run: echo $(ls)
       - run: ./trigger_anki.sh
