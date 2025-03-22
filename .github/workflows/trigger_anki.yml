@@ -2,14 +2,19 @@ name: trigger-anki
 
 on:
   schedule:
-    - cron:  '0 0 * * *'
-
-  # Allow manual triggering
+    - cron:  '0 0 * * *'  # Every day at midnight UTC
   workflow_dispatch:
 
 jobs:
   check:
     runs-on: ubuntu-latest
     steps:
-      - run: ls
-      - run: ./trigger_anki.sh
+      - name: Check out repository
+        uses: actions/checkout@v4  # Make sure the code is present
+
+      - name: List files
+        run: ls
+
+      - name: Run Anki trigger script
+        run: ./trigger_anki.sh
+
