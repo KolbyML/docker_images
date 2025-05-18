@@ -63,5 +63,6 @@ jobs:
           tags: |
             ${{ env.REGISTRY }}/kolbyml/anki-syncserver:latest
             ${{ env.REGISTRY }}/kolbyml/anki-syncserver:${{ needs.extract-version.outputs.VERSION }}
+          platforms: linux/amd64,linux/arm64
           cache-from: type=gha
           cache-to: type=gha,mode=max
